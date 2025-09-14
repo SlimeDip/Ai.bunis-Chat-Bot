@@ -51,6 +51,7 @@
 
             e.preventDefault();
             const prompt = textarea.value.trim();
+            textarea.value = '';
             if (!prompt) return;
 
             const userLi = document.createElement('li');
@@ -73,8 +74,6 @@
             chatbox.appendChild(aiLi);
 
             chatbox.scrollTop = chatbox.scrollHeight;
-
-            textarea.value = '';
         });
     </script>
 </body>
