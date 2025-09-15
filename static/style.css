@@ -207,6 +207,7 @@ body {
         justify-content: center;
         overflow: hidden;
         margin-bottom: 20px;
+        padding-bottom: env(safe-area-inset-bottom, 24px);
     }
 
     .popup {
@@ -240,6 +241,7 @@ body {
         box-sizing: border-box;
         width: 100%;
         background: #f9f9f9;
+        padding-bottom: env(safe-area-inset-bottom, 24px);
     }
 
     .chat-input textarea {
