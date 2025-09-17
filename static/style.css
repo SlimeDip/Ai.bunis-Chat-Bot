@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.5;
 }
 
 .logo {
@@ -89,11 +90,6 @@ body {
     object-fit: cover;
 }
 
-.chat-incoming {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-}
 
 .chat-input {
     padding: 10px 25px;
@@ -117,7 +113,7 @@ body {
     overflow-y: auto;
     background-color: #dcdcdc85;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 360;
     margin: 0;
     height: 100%;
     box-sizing: border-box;
@@ -130,7 +126,7 @@ body {
     font-size: 20px;
     font-weight: 600;
     border-radius: 15px;
-    background-color: #2F8D46;
+    background-color: #7BC1FA;
     cursor: pointer;
     color: white;
     margin: 0;
@@ -140,16 +136,22 @@ body {
 }
 
 .submit_btn:hover, .close_ok:hover {
-    background-color: #256c36;
+    background-color: #75AAF0;
+}
+
+.chat-incoming {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
 }
 
 .chat-incoming p {
-    background-color: #a9e2f9;
+    background-color: #8FDAFA;
     padding: 10px 16px;
     border-radius: 12px;
     margin: 0;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 360;
     max-width: 80%;
     word-break: break-word;
     box-shadow: 0 2px 8px rgba(47, 141, 70, 0.08);
@@ -164,11 +166,11 @@ body {
 }
 
 .chat-outgoing p {
-    background-color: #c3e2ee;
+    background-color: #A3E3FA;
     padding: 10px 16px;
     border-radius: 12px;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 360;
     max-width: 80%;
     word-break: break-word;
     box-shadow: 0 2px 8px rgba(47, 141, 70, 0.08);
@@ -177,6 +179,26 @@ body {
     margin-bottom: 20px;
 }
 
+.loading {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.loading p{
+    background-color: #8FDAFA;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 360;
+    max-width: 80%;
+    word-break: break-word;
+    box-shadow: 0 2px 8px rgba(47, 141, 70, 0.08);
+    margin: 0;
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+    
 @media (max-width: 700px) {
     html, body {
         height: 100%;

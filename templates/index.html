@@ -7,18 +7,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <!--
-    <div class="popup" id="popup">
-        <div class="popup_frame">
-            <h2>Hello!</h2>
-            <p>This website is experimental. I made this for learning purposes.<br><br>- SlimeDip</p>
-            <div class="ok_bttn">
-                <span class="close_ok" onclick="lightBoxClose()">Ok</span>
-            </div>
-        </div>
-    </div>
-    -->
-
     <h1 class="logo">Ai.bunis</h1>
 
     <div class="container">
@@ -51,13 +39,22 @@
 
             e.preventDefault();
             const prompt = textarea.value.trim();
-            textarea.value = '';
+            
             if (!prompt) return;
+
+            textarea.value = '';
 
             const userLi = document.createElement('li');
             userLi.className = 'chat-outgoing chat';
             userLi.innerHTML = `<p>${prompt}</p>`;
             chatbox.appendChild(userLi);
+
+            chatbox.scrollTop = chatbox.scrollHeight;
+
+            const loadLi = document.createElement('li');
+            loadLi.className = 'loading';
+            loadLi.innerHTML = `<img src="{{ url_for('static', filename='Aibunis_pic.png') }}" alt="Aibunis" class="avatar"><p>. . .</p>`;
+            chatbox.appendChild(loadLi);
 
             chatbox.scrollTop = chatbox.scrollHeight;
 
@@ -67,6 +64,8 @@
                 body: JSON.stringify({prompt})
             });
             const data = await response.json();
+
+            loadLi.remove()
 
             const aiLi = document.createElement('li');
             aiLi.className = 'chat-incoming chat';
